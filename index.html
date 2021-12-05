@@ -1,226 +1,82 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
+
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>Our Story of &amp; love</title>
-
-    <link type="text/css" rel="stylesheet" href="./css/default.css">
-	<script type="text/javascript" src="./js/jquery.js"></script>
-	<script type="text/javascript" src="./js/jscex.js"></script>
-	<script type="text/javascript" src="./js/jscex-parser.js"></script>
-	<script type="text/javascript" src="./js/jscex-jit.js"></script>
-	<script type="text/javascript" src="./js/jscex-builderbase.js"></script>
-	<script type="text/javascript" src="./js/jscex-async.js"></script>
-	<script type="text/javascript" src="./js/jscex-async-powerpack.js"></script>
-	<script type="text/javascript" src="./js/functions.js" charset="utf-8"></script>
-	<script type="text/javascript" src="./js/love.js" charset="utf-8"></script>
-</head>
-    <body>
-        <!--这里放音乐哦 -->
-		<audio autoplay="autopaly" src="./iloveu.mp3"> </audio>
-
-        <div id="main">
-            <!-- 不兼容的提醒 -->
-            <div id="error">亲爱哒，您的浏览器无法显示呐，麻烦请换成谷歌，火狐，360浏览器。么么哒！(づ￣ 3￣)づ！</div>
-            <div id="wrap">
-                <div id="text">
-			        <div id="code">
-			        	<span class="say"> Our Story</span><br>
-						<span class="say"> </span><br>
-			        	<span class="say"> For  秦晴 &amp; 阿晴 </span><br>
-						<span class="say"> </span><br>
-                        <span class="say"> 或许是缘分，或许是命中注定, 一次偶然的机会让你我相识。</span><br>
-			        	<span class="say"> 就像一场梦一样, 很快，我们第一次见面, 在美丽的玄武湖畔。</span><br>
-			        	<span class="say"> 在你牵我手的那一刻，我冰封多年的心逐渐融化了, 我真切的感受到了每一缕春风吹在我脸上的感觉。</span><br>
-			        	<span class="say"> 那一刻，我佯装淡定，其实内心也早已停止了思考。</span><br>
-			        	<span class="say"> 你总说你很紧张，我又何尝不是。</span><br>
-						<span class="say"> </span><br>
-			        	<span class="say"> 转眼间，我们相识已经快半年了。</span><br>
-                        <span class="say"> 期间，我们多次小打小闹，但是没有一次彻底打断我们之间的联系。</span><br>
-                        <span class="say"> 你不知道，其实在我内心里，已经是那么的依赖你。也许在不知不觉间，我们已经难以离开彼此了。</span><br>
-                        <span class="say"> </span><br>
-                        <span class="say"> 我可能压力比较大，事情也比较多, 并不能时时刻刻陪着你。</span><br>
-                        <span class="say"> 但只要你想和我说话，我就会立刻出现在你身边。</span><br>
-                        <span class="say"> 我好喜欢我们相互信任，一起成长的感觉。</span><br>
-                        <span class="say"> 我好喜欢我们相互坦诚，无话不谈的感觉。</span><br>
-                        <span class="say"> 我好喜欢你。</span><br>
-                        <span class="say"> 我爱你。</span><br>
-                        <span class="say"> 我们会永远在一起的，对吧。</span><br>
-                        <span class="say"> </span><br>
-						<span class="say"> </span><br>
-                        <span class="say"><span class="space"></span>阿晴 与 浩浩</span>
-			        </div>
-                </div>
-                <div id="clock-box">
-                    浩浩<span class="STYLE1">与</span>阿晴<span class="STYLE1">已经相识了</span>
-                  <div id="clock"></div>
-              </div>
-                <canvas id="canvas" width="1100" height="680"></canvas>
-            </div>
-            
-        </div>
-    
-    <script>
-    </script>
-
-    <script>
-    (function(){
-        var canvas = $('#canvas');
-		
-        if (!canvas[0].getContext) {
-            $("#error").show();
-            return false;
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>恋爱计时器</title>
+    <style>
+        body {
+            -webkit-font-smoothing: antialiased;
+            font-family: Helvetica Neue, Helvetica, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+            background-image: url('bg.jpg');
+            font-size: 85%;
+            margin: 0;
         }
-
-        var width = canvas.width();
-        var height = canvas.height();
         
-        canvas.attr("width", width);
-        canvas.attr("height", height);
-
-        var opts = {
-            seed: {
-                x: width / 2 - 20,
-                color: "rgb(190, 26, 37)",
-                scale: 2
-            },
-            branch: [
-                [535, 680, 570, 250, 500, 200, 30, 100, [
-                    [540, 500, 455, 417, 340, 400, 13, 100, [
-                        [450, 435, 434, 430, 394, 395, 2, 40]
-                    ]],
-                    [550, 445, 600, 356, 680, 345, 12, 100, [
-                        [578, 400, 648, 409, 661, 426, 3, 80]
-                    ]],
-                    [539, 281, 537, 248, 534, 217, 3, 40],
-                    [546, 397, 413, 247, 328, 244, 9, 80, [
-                        [427, 286, 383, 253, 371, 205, 2, 40],
-                        [498, 345, 435, 315, 395, 330, 4, 60]
-                    ]],
-                    [546, 357, 608, 252, 678, 221, 6, 100, [
-                        [590, 293, 646, 277, 648, 271, 2, 80]
-                    ]]
-                ]] 
-            ],
-            bloom: {
-                num: 700,
-                width: 1080,
-                height: 650,
-            },
-            footer: {
-                width: 1200,
-                height: 5,
-                speed: 10,
-            }
+        h2 {
+            font-size: 220%;
+            font-weight: 400;
         }
+        
+        .content {
+            position: absolute;
+            width: 100%;
+            top: 40%;
+            transform: translate(0, -50%);
+            text-align: center;
+        }
+        
+        .timer {
+            font-size: 180%;
+            line-height: 1.5;
+            margin: 1em 0;
+        }
+        
+        .timer b {
+            color: rgb(253, 99, 125);
+        }
+    </style>
+</head>
 
-        var tree = new Tree(canvas[0], width, height, opts);
-        var seed = tree.seed;
-        var foot = tree.footer;
-        var hold = 1;
+<body>
+    <div class="content">
+        <h2>阿晴，我们已经在一起了</h2>
+        <div class="timer">
+            <b id="d"></b> Days <b id="h"></b> Hours <b id="m"></b> Minutes <b id="s"></b> Seconds
+        </div>
+        <p>This is a paragraph</p>
+        <p>This is another paragraph</p>
+    </div>
 
-        canvas.click(function(e) {
-            var offset = canvas.offset(), x, y;
-            x = e.pageX - offset.left;
-            y = e.pageY - offset.top;
-            if (seed.hover(x, y)) {
-                hold = 0; 
-                canvas.unbind("click");
-                canvas.unbind("mousemove");
-                canvas.removeClass('hand');
+    <script>
+        function timer() {
+            var start = new Date(2021, 7, 16); // 2015.7.2
+            var t = new Date() - start;
+            var h = ~~(t / 1000 / 60 / 60 % 24);
+            if (h < 10) {
+                h = "0" + h;
             }
-        }).mousemove(function(e){
-            var offset = canvas.offset(), x, y;
-            x = e.pageX - offset.left;
-            y = e.pageY - offset.top;
-            canvas.toggleClass('hand', seed.hover(x, y));
-        });
-
-        var seedAnimate = eval(Jscex.compile("async", function () {
-            seed.draw();
-            while (hold) {
-                $await(Jscex.Async.sleep(10));
+            var m = ~~(t / 1000 / 60 % 60);
+            if (m < 10) {
+                m = "0" + m;
             }
-            while (seed.canScale()) {
-                seed.scale(0.95);
-                $await(Jscex.Async.sleep(10));
+
+            var s = ~~(t / 1000 % 60);
+            if (s < 10) {
+                s = "0" + s;
             }
-            while (seed.canMove()) {
-                seed.move(0, 2);
-                foot.draw();
-                $await(Jscex.Async.sleep(10));
-            }
-        }));
-
-        var growAnimate = eval(Jscex.compile("async", function () {
-            do {
-    	        tree.grow();
-                $await(Jscex.Async.sleep(10));
-            } while (tree.canGrow());
-        }));
-
-        var flowAnimate = eval(Jscex.compile("async", function () {
-            do {
-    	        tree.flower(2);
-                $await(Jscex.Async.sleep(10));
-            } while (tree.canFlower());
-        }));
-
-        var moveAnimate = eval(Jscex.compile("async", function () {
-            tree.snapshot("p1", 240, 0, 610, 680);
-            while (tree.move("p1", 500, 0)) {
-                foot.draw();
-                $await(Jscex.Async.sleep(10));
-            }
-            foot.draw();
-            tree.snapshot("p2", 500, 0, 610, 680);
-
-            // 会有闪烁不得意这样做, (＞﹏＜)
-            canvas.parent().css("background", "url(" + tree.toDataURL('image/png') + ")");
-            canvas.css("background", "#ffe");
-            $await(Jscex.Async.sleep(300));
-            canvas.css("background", "none");
-        }));
-
-        var jumpAnimate = eval(Jscex.compile("async", function () {
-            var ctx = tree.ctx;
-            while (true) {
-                tree.ctx.clearRect(0, 0, width, height);
-                tree.jump();
-                foot.draw();
-                $await(Jscex.Async.sleep(25));
-            }
-        }));
-
-        var textAnimate = eval(Jscex.compile("async", function () {
-		    var together = new Date();
-		    together.setFullYear(2021, 7,16); 			//时间年月日
-		    together.setHours(23);						//小时	
-		    together.setMinutes(0);					//分钟
-		    together.setSeconds(0);					//秒前一位
-		    together.setMilliseconds(0);				//秒第二位
-
-		    $("#code").show().typewriter();
-            $("#clock-box").fadeIn(500);
-            while (true) {
-                timeElapse(together);
-                $await(Jscex.Async.sleep(1000));
-            }
-        }));
-
-        var runAsync = eval(Jscex.compile("async", function () {
-            $await(seedAnimate());
-            $await(growAnimate());
-            $await(flowAnimate());
-            $await(moveAnimate());
-
-            textAnimate().start();
-
-            $await(jumpAnimate());
-        }));
-
-        runAsync().start();
-    })();
+            document.getElementById('d').innerHTML = ~~(t / 1000 / 60 / 60 / 24);
+            document.getElementById('h').innerHTML = h;
+            document.getElementById('m').innerHTML = m;
+            document.getElementById('s').innerHTML = s;
+        }
+        timer();
+        setInterval(timer, 1000);
     </script>
 </body>
+
 </html>
